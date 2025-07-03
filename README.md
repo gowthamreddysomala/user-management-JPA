@@ -11,3 +11,5 @@
 ![image](https://github.com/user-attachments/assets/cc8e8733-d865-4ec9-9105-4694d3ce07e1)
 
 ---
+- mvn clean install
+![image](https://github.com/user-attachments/assets/13f33a7d-0ff7-48c5-903f-da5b832e1c45)
