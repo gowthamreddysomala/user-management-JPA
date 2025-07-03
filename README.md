@@ -1,6 +1,4 @@
-## User Management using JPA (Java Presistance API)
-
-# User‑Management API 🚀  
+# User Management using JPA (Java Presistance API)🚀  
 RESTful CRUD service built with **Spring Boot 3 + Spring Data JPA + PostgreSQL**.
 
 <img src="https://github.com/user-attachments/assets/08dbaf74-b1a5-4a34-b453-b5947d7793d0" width="250"/>  
