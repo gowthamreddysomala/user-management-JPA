@@ -40,11 +40,16 @@ git clone https://github.com/KhushiRaj23/user-management-JPA.git
 cd user-management-JPA
 
 # 2 Configure DB
-# Either edit src/main/resources/application.properties
-# or export variables before running (preferred):
-export DB_URL=jdbc:postgresql://localhost:5432/userdb
-export DB_USER=postgres
-export DB_PASS=12345
+spring.application.name=userManagementApi
+
+# Database Connection Properties for MariaDB
+spring.datasource.url=jdbc:mariadb://localhost:3306/UNIVERSITY
+spring.datasource.username=gowthamreddy
+spring.datasource.password=rhkg38yw4w
+spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
 
 # 3 Boot the app
 ./mvnw spring-boot:run          # hot‑reload dev mode
