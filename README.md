@@ -110,7 +110,52 @@ src
     └── resources
         └── application.properties
 ```
+---
 
+## 🧪Testing
+
+| Layer under test | Technology | Notes |
+|------------------|------------|-------|
+| Web + Service    | **JUnit 5** (`spring-boot-starter-test`) | Full Spring context bootstrapped per class |
+| HTTP layer       | **MockMvc** | Simulates real requests without opening a port |
+| JSON handling    | **Jackson (ObjectMapper)** | Serialises/deserialises request/response bodies |
+| Database         | **Spring Data JPA** with the same profile used in dev | Each test starts with a clean table (`@BeforeEach` → `repository.deleteAll()`) |
+
+### 👩🏻‍💻UserControllerTest (Testing branch)
+
+### File Structure:
+
+```
+user-management-api/                     ← project root
+│
+├── pom.xml                               ← Maven build file
+│
+├── src/
+│   ├── main/
+│   │
+│   └── test/
+│       ├── java/
+│       │   └── com/
+│       │       └── user/
+│       │           └── usermanagementapi/
+│       │                └── UserControllerTest.java   ← **<‑‑ the file in question**
+│       │
+```
+
+
+
+| Test class | Scenario | Endpoint exercised |
+|------------|----------|--------------------|
+| `UserControllerTest` | **Get one user (found)** | `GET /api/users/{id}` |
+|                     | **Bulk create users** | `POST /api/users` |
+|                     | **Delete user (found)** | `DELETE /api/users/{id}` |
+|                     | **Delete user (not found)** | `DELETE /api/users/{id}` (non‑existent) |
+
+> All of the above endpoints are part of the public API.
+
+![Screenshot 2025-07-04 165642](https://github.com/user-attachments/assets/460bb1eb-1f71-4c2a-b5ad-9330d086e09a)
+
+---
 
 ### Author
 
